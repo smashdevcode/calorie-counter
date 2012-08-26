@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieCounter", "CalorieCounter\CalorieCounter.csproj", "{41D0B773-57FA-4637-A260-DE66142B6FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieCounter.Tests", "CalorieCounter.Tests\CalorieCounter.Tests.csproj", "{4BB6F3CB-8F50-4695-97F9-C9005EE84D96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41D0B773-57FA-4637-A260-DE66142B6FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D0B773-57FA-4637-A260-DE66142B6FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D0B773-57FA-4637-A260-DE66142B6FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D0B773-57FA-4637-A260-DE66142B6FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB6F3CB-8F50-4695-97F9-C9005EE84D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB6F3CB-8F50-4695-97F9-C9005EE84D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB6F3CB-8F50-4695-97F9-C9005EE84D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB6F3CB-8F50-4695-97F9-C9005EE84D96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
