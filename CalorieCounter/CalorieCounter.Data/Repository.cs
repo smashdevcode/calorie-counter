@@ -13,8 +13,11 @@ namespace CalorieCounter.Data
 		private Context _context;
 
 		public Repository()
-		{
+		{	
+			// TODO move this into the Context constructor???
+			// TODO move this setting into the web.config file???
 			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
+
 			_context = new Context();
 		}
 

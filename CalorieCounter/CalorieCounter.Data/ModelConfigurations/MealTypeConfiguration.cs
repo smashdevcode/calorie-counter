@@ -12,6 +12,7 @@ namespace CalorieCounter.Data.ModelConfigurations
 	{
 		public MealTypeConfiguration()
 		{
+			Property(mt => mt.Name).HasMaxLength(50).IsRequired();
 		}
 	}
 }

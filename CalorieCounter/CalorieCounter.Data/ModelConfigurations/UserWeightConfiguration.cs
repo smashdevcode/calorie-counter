@@ -12,6 +12,7 @@ namespace CalorieCounter.Data.ModelConfigurations
 	{
 		public UserWeightConfiguration()
 		{
+			Property(uw => uw.Weight).HasPrecision(4, 1);
 		}
 	}
 }

@@ -12,6 +12,8 @@ namespace CalorieCounter.Data.ModelConfigurations
 	{
 		public DailyTargetConfiguration()
 		{
+			Property(dt => dt.Fat).HasPrecision(3, 1);
+			Property(dt => dt.DateUTC).IsRequired();
 		}
 	}
 }

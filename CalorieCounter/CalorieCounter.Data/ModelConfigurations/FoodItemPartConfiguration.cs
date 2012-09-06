@@ -8,11 +8,11 @@ using CalorieCounter.Data.Entities;
 
 namespace CalorieCounter.Data.ModelConfigurations
 {
-	public class LogEntryFoodItemConfiguration : EntityTypeConfiguration<LogEntryFoodItem>
+	public class FoodItemPartConfiguration : EntityTypeConfiguration<FoodItemPart>
 	{
-		public LogEntryFoodItemConfiguration()
+		public FoodItemPartConfiguration()
 		{
-			Property(lefi => lefi.Serving).HasPrecision(3, 1);
+			Property(fip => fip.Serving).HasPrecision(3, 1);
 		}
 	}
 }

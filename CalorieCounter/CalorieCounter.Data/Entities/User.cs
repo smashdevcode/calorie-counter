@@ -13,13 +13,15 @@ namespace CalorieCounter.Data.Entities
 		public string Username { get; set; }
 		public string HashedPassword { get; set; }
 		public string Name { get; set; }
+		// TODO how to add unique constraint???
 		public string Email { get; set; }
 		// TODO do we need to store this???
 		// can't we just get this information from the browser???
 		public string TimeZone { get; set; }
 
-		// TODO setup collections
-
-		public ICollection<UserWeight> Weights { get; set; }
+		public List<UserWeight> Weights { get; set; }
+		public List<DailyTarget> DailyTargets { get; set; }
+		public List<FoodItem> FoodItems { get; set; }
+		public List<LogEntry> LogEntries { get; set; }
 	}
 }

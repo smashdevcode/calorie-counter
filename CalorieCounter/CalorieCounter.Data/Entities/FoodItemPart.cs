@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CalorieCounter.Data.Entities
 {
-	public class LogEntryFoodItem
+	public class FoodItemPart
 	{
-		public int LogEntryFoodItemID { get; set; }
-		public int LogEntryID { get; set; }
+		public int FoodItemPartID { get; set; }
 		public int FoodItemID { get; set; }
+		public int ContainsFoodItemID { get; set; }
 		public decimal Serving { get; set; }
 
-		public LogEntry LogEntry { get; set; }
 		public FoodItem FoodItem { get; set; }
+		public FoodItem ContainsFoodItem { get; set; }
 	}
 }

@@ -12,5 +12,7 @@ namespace CalorieCounter.Data.Entities
 		public int UserID { get; set; }
 		public decimal Weight { get; set; }
 		public DateTime DateUTC { get; set; }
+
+		public User User { get; set; }
 	}
 }

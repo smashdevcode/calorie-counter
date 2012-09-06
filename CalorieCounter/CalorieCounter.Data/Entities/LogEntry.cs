@@ -12,5 +12,8 @@ namespace CalorieCounter.Data.Entities
 		public int UserID { get; set; }
 		public int MealTypeID { get; set; }
 		public DateTime DateTimeUTC { get; set; }
+
+		public MealType MealType { get; set; }
+		public List<LogEntryFoodItem> LogEntryFoodItems { get; set; }
 	}
 }

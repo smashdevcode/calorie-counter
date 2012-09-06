@@ -12,6 +12,17 @@ namespace CalorieCounter.Data.ModelConfigurations
 	{
 		public FoodItemConfiguration()
 		{
+			Property(fi => fi.Name).HasMaxLength(50).IsRequired();
+			Property(fi => fi.Fat).HasPrecision(3, 1);
+			Property(fi => fi.ServingSize).HasMaxLength(100);
+
+			this.HasMany(fi => fi.FoodItemParts)
+				.WithRequired(fip => fip.FoodItem)
+				.HasForeignKey(fip => fip.FoodItemID);
+			this.HasMany(fi => fi.ContainedByFoodItemParts)
+				.WithRequired(fip => fip.ContainsFoodItem)
+				.HasForeignKey(fip => fip.ContainsFoodItemID)
+				.WillCascadeOnDelete(false);
 		}
 	}
 }

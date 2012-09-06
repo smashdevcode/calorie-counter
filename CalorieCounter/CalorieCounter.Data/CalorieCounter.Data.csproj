@@ -47,6 +47,7 @@
     <Compile Include="Context.cs" />
     <Compile Include="Entities\DailyTarget.cs" />
     <Compile Include="Entities\FoodItem.cs" />
+    <Compile Include="Entities\FoodItemPart.cs" />
     <Compile Include="Entities\LogEntry.cs" />
     <Compile Include="Entities\LogEntryFoodItem.cs" />
     <Compile Include="Entities\MealType.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Entities\UserWeight.cs" />
     <Compile Include="ModelConfigurations\DailyTargetConfiguration.cs" />
     <Compile Include="ModelConfigurations\FoodItemConfiguration.cs" />
+    <Compile Include="ModelConfigurations\FoodItemPartConfiguration.cs" />
     <Compile Include="ModelConfigurations\LogEntryConfiguration.cs" />
     <Compile Include="ModelConfigurations\LogEntryFoodItemConfiguration.cs" />
     <Compile Include="ModelConfigurations\MealTypeConfiguration.cs" />
@@ -64,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

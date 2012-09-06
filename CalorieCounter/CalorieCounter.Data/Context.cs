@@ -20,7 +20,9 @@ namespace CalorieCounter.Data
 		public DbSet<User> Users { get; set; }
 		public DbSet<UserWeight> UserWeights { get; set; }
 
-		// TODO remove???
+		// TODO switch back to using the call to the base class constructor???
+		// apparently is a best practice... if the connection string cannot be found an exception is thrown
+		// which guarantees that the application is using the proper settings
 		//public Context()
 		//	: base("name=CalorieCounterContext")
 		//{
@@ -32,6 +34,7 @@ namespace CalorieCounter.Data
 
 			modelBuilder.Configurations.Add(new DailyTargetConfiguration());
 			modelBuilder.Configurations.Add(new FoodItemConfiguration());
+			modelBuilder.Configurations.Add(new FoodItemPartConfiguration());
 			modelBuilder.Configurations.Add(new LogEntryConfiguration());
 			modelBuilder.Configurations.Add(new LogEntryFoodItemConfiguration());
 			modelBuilder.Configurations.Add(new MealTypeConfiguration());
