@@ -14,10 +14,6 @@ namespace CalorieCounter.Data
 
 		public Repository()
 		{	
-			// TODO move this into the Context constructor???
-			// TODO move this setting into the web.config file???
-			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
-
 			_context = new Context();
 		}
 
@@ -25,6 +21,11 @@ namespace CalorieCounter.Data
 		{
 			return _context.Users.ToList();
 		}
+        public void AddUser(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+        }
 
 		// TODO write other queries
 

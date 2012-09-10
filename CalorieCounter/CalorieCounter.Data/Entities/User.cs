@@ -8,6 +8,14 @@ namespace CalorieCounter.Data.Entities
 {
 	public class User
 	{
+        public User()
+        {
+            Weights = new List<UserWeight>();
+            DailyTargets = new List<DailyTarget>();
+            FoodItems = new List<FoodItem>();
+            LogEntries = new List<LogEntry>();
+        }
+
 		public int UserID { get; set; }
 		// TODO use oAuth instead???
 		public string Username { get; set; }
@@ -15,9 +23,6 @@ namespace CalorieCounter.Data.Entities
 		public string Name { get; set; }
 		// TODO how to add unique constraint???
 		public string Email { get; set; }
-		// TODO do we need to store this???
-		// can't we just get this information from the browser???
-		public string TimeZone { get; set; }
 
 		public List<UserWeight> Weights { get; set; }
 		public List<DailyTarget> DailyTargets { get; set; }

@@ -8,6 +8,11 @@ namespace CalorieCounter.Data.Entities
 {
 	public class LogEntry
 	{
+        public LogEntry()
+        {
+            LogEntryFoodItems = new List<LogEntryFoodItem>();
+        }
+
 		public int LogEntryID { get; set; }
 		public int UserID { get; set; }
 		public int MealTypeID { get; set; }

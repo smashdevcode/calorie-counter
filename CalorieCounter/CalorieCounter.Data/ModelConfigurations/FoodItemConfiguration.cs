@@ -13,8 +13,8 @@ namespace CalorieCounter.Data.ModelConfigurations
 		public FoodItemConfiguration()
 		{
 			Property(fi => fi.Name).HasMaxLength(50).IsRequired();
-			Property(fi => fi.Fat).HasPrecision(3, 1);
-			Property(fi => fi.ServingSize).HasMaxLength(100);
+            Property(fi => fi.ServingSize).HasMaxLength(100);
+            //Property(fi => fi.Fat).HasPrecision(3, 1);
 
 			this.HasMany(fi => fi.FoodItemParts)
 				.WithRequired(fip => fip.FoodItem)

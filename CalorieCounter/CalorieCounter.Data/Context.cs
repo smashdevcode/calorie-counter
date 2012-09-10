@@ -10,25 +10,21 @@ using CalorieCounter.Data.ModelConfigurations;
 
 namespace CalorieCounter.Data
 {
-	public class Context : DbContext
+	internal class Context : DbContext
 	{
-		public DbSet<DailyTarget> DailyTargets { get; set; }
-		public DbSet<FoodItem> FoodItems { get; set; }
-		public DbSet<LogEntry> LogEntries { get; set; }
-		public DbSet<LogEntryFoodItem> LogEntryFoodItems { get; set; }
-		public DbSet<MealType> MealTypes { get; set; }
-		public DbSet<User> Users { get; set; }
-		public DbSet<UserWeight> UserWeights { get; set; }
+		public Context() : base("name=CalorieCounterContext")
+		{
+			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
+		}
 
-		// TODO switch back to using the call to the base class constructor???
-		// apparently is a best practice... if the connection string cannot be found an exception is thrown
-		// which guarantees that the application is using the proper settings
-		//public Context()
-		//	: base("name=CalorieCounterContext")
-		//{
-		//}
-		
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public DbSet<DailyTarget> DailyTargets { get; set; }
+        public DbSet<FoodItem> FoodItems { get; set; }
+        public DbSet<LogEntry> LogEntries { get; set; }
+        public DbSet<MealType> MealTypes { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserWeight> UserWeights { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
