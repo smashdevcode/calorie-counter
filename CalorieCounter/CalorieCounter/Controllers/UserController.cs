@@ -12,7 +12,7 @@ namespace CalorieCounter.Controllers
 {
     public class UserController : Controller
     {
-        private Repository repository = new Repository();
+        private Repository repository = new Repository(true);
 
         //
         // GET: /User/

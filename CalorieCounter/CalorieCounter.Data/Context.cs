@@ -14,7 +14,6 @@ namespace CalorieCounter.Data
 	{
 		public Context() : base("name=CalorieCounterContext")
 		{
-			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
 		}
 
         public DbSet<DailyTarget> DailyTargets { get; set; }

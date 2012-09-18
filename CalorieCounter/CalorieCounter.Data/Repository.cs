@@ -12,8 +12,11 @@ namespace CalorieCounter.Data
 	{
 		private Context _context;
 
-		public Repository()
-		{	
+		public Repository(bool dropAndCreateDatabaseIfModelChanges = false)
+		{
+			if (dropAndCreateDatabaseIfModelChanges)
+				Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
+
 			_context = new Context();
 		}
 
