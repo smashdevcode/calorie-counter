@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="ContextInitializer.cs" />
     <Compile Include="Entities\DailyTarget.cs" />
     <Compile Include="Entities\FoodItem.cs" />
     <Compile Include="Entities\FoodItemPart.cs" />
