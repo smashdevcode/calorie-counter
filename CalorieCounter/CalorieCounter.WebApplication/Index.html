@@ -10,17 +10,25 @@
 	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.1.0.js"></script>
 	<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
 	<script type="text/javascript">
+		var VIEWS = {
+			DailyLog : { value: 0, name: "Daily Log" },
+			DailyTarget : { value: 1, name: "Daily Target" },
+			Weight : { value: 2, name: "Weight" },
+			FoodItems : { value: 3, name: "Food Items" }
+		};
+
 		$(document).ready(function () {
 			function CalorieCounterViewModel() {
 				var self = this;
-				self.views = ["Daily Log", "Daily Target", "Weight", "Food Items"];
+				self.views = [ VIEWS.DailyLog, VIEWS.DailyTarget, VIEWS.Weight, VIEWS.FoodItems ];
 				self.chosenView = ko.observable();
-				self.viewHeading = ko.observable();
 
 				self.goToView = function (view) {
 					self.chosenView(view);
-					self.viewHeading(view);
 				};
+
+				// display the daily log by default
+				self.goToView(VIEWS.DailyLog);
 			}
 			ko.applyBindings(new CalorieCounterViewModel());
 			//    $.getJSON("api/users/", function (data) {
@@ -39,17 +47,33 @@
 			<a class="brand" href="#">Calorie Counter</a>
 			<ul data-bind="foreach: views" class="nav">
 				<li data-bind="css: { active: $data == $root.chosenView() }">
-					<a href="#" data-bind="text: $data, click: $root.goToView"></a></li>
+					<a href="#" data-bind="text: $data.name, click: $root.goToView"></a></li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<h2 data-bind="text: viewHeading"></h2>
+			<h2 data-bind="text: chosenView().name"></h2>
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8">
+
+						<div data-bind="visible: chosenView() == VIEWS.DailyLog">
+							<p>This is my daily log.</p>
+						</div>
+
+						<div data-bind="visible: chosenView() == VIEWS.DailyTarget">
+							<p>These are my daily targets.</p>
+						</div>
+
+						<div data-bind="visible: chosenView() == VIEWS.Weight">
+							<p>These are my weights.</p>
+						</div>
+
+						<div data-bind="visible: chosenView() == VIEWS.FoodItems">
+							<p>These are my food items.</p>
+						</div>
 
 					</div>
 					<div class="span4" style="background-color: aliceblue">
