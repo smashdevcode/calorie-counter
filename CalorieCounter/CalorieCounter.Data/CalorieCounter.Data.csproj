@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="ContextInitializer.cs" />
     <Compile Include="Entities\DailyTarget.cs" />
     <Compile Include="Entities\FoodItem.cs" />
     <Compile Include="Entities\FoodItemPart.cs" />
@@ -54,21 +53,22 @@
     <Compile Include="Entities\MealType.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserWeight.cs" />
-    <Compile Include="ModelConfigurations\DailyTargetConfiguration.cs" />
-    <Compile Include="ModelConfigurations\FoodItemConfiguration.cs" />
-    <Compile Include="ModelConfigurations\FoodItemPartConfiguration.cs" />
-    <Compile Include="ModelConfigurations\LogEntryConfiguration.cs" />
-    <Compile Include="ModelConfigurations\LogEntryFoodItemConfiguration.cs" />
-    <Compile Include="ModelConfigurations\MealTypeConfiguration.cs" />
-    <Compile Include="ModelConfigurations\UserConfiguration.cs" />
-    <Compile Include="ModelConfigurations\UserWeightConfiguration.cs" />
+    <Compile Include="Migrations\201211021628571_Initial.cs" />
+    <Compile Include="Migrations\201211021628571_Initial.Designer.cs">
+      <DependentUpon>201211021628571_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201211021628571_Initial.resx">
+      <DependentUpon>201211021628571_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

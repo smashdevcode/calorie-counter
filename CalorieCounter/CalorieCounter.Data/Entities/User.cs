@@ -21,7 +21,6 @@ namespace CalorieCounter.Data.Entities
 		public string Username { get; set; }
 		public string HashedPassword { get; set; }
 		public string Name { get; set; }
-		// TODO how to add unique constraint???
 		public string Email { get; set; }
 
 		public List<UserWeight> Weights { get; set; }

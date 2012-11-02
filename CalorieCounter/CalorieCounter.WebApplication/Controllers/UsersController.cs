@@ -16,7 +16,7 @@ namespace CalorieCounter.WebApplication.Controllers
 		// TODO add constructor that accepts a IRepository interface
 		public UsersController()
 		{
-			_repository = new Repository(true);
+			_repository = new Repository();
 		}
 
 		public IEnumerable<User> GetUsers()
